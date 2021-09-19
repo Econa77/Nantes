@@ -98,7 +98,9 @@ extension NantesLabel {
         let lastLineRange = NSRange(range: CTLineGetStringRange(lastLine))
         let isPaintingTruncatedString = lastLineRange.location + lastLineRange.length < textRange.location + textRange.length
 
-        if shouldHandleTruncation && (hasExtraLines || isPaintingTruncatedString) {
+        isTruncated = shouldHandleTruncation && (hasExtraLines || isPaintingTruncatedString)
+
+        if isTruncated {
             lines = truncateLines(lines, fromAttritubedString: attributedString, rect: rect, path: path)
         }
 
