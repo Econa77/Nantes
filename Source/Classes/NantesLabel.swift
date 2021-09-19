@@ -156,6 +156,8 @@ import UIKit
         return _renderedAttributedText
     }
 
+    var isTruncated: Bool = false
+
     // MARK: - UILabel vars
 
     override open var accessibilityElements: [Any]? {

@@ -9,6 +9,12 @@
 import UIKit
 
 extension NantesLabel {
+    open func getIsTruncated(completionHandler: @escaping ((Bool) -> Void)) {
+        DispatchQueue.main.async { [weak self] in
+            completionHandler(self?.isTruncated ?? false)
+        }
+    }
+
     /// Returns an array of lines, truncated by `attributedTruncationToken`
     ///
     /// Takes into account multi line truncation tokens and replaces the original
